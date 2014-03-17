@@ -1,6 +1,8 @@
-Painel Web
-==========
+Painel Web do Novo SGA
+======================
 
-Novo SGA Painel escrito em HTML5 e Javascript.
+Essa é a versão do painel web do [Novo SGA](http://novosga.org) utilizado pelo Hospital Infantil Albert Sabin.
+
+Projeto original: [Novo SGA Painel](https://github.com/novosga/painel-web)
 
 Compatível com versões a partir da 1.0.0
