@@ -103,7 +103,7 @@
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
 }
-.normal .box-senha {
+#layout.normal .box-senha {
     border: 5px solid #b9d8c1;
     background: #59b282; /* Old browsers */
     background: -moz-linear-gradient(top,  #59b282 0%, #488c65 100%); /* FF3.6+ */
@@ -114,7 +114,7 @@
     background: linear-gradient(to bottom,  #59b282 0%,#488c65 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59b282', endColorstr='#488c65',GradientType=0 ); /* IE6-9 */    
 }
-.prioridade .box-senha {
+#layout.prioridade .box-senha {
     border: 5px solid #EF906E;
     background: #a90329; /* Old browsers */
     background: -moz-linear-gradient(top, #a90329 0%, #682533 100%); /* FF3.6+ */
@@ -166,7 +166,7 @@
     text-align: center;
 }
 .container-local #local-numero span {
-    color: #91a99b;
+    color: #69a583;
     font-size: 6em;
     text-align: center;
     font-weight: bold;
@@ -218,6 +218,8 @@
     font-size: 3em;
 }  
 
+#historico .normal * { color: #69a583; }
+#historico .prioridade * { color: #a90329; }
 
 
 
