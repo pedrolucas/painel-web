@@ -6,7 +6,7 @@ var SGA = SGA || {};
 
 SGA.PainelWeb = {
 
-    layout: 'default',
+    layout: 'gov-ce',
     senhas: [],
     historico: [],
     ultimoId: 0,

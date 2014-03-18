@@ -1,0 +1,33 @@
+{
+    "name": "Gov-CE",
+    "description": "Layout utilizado pelos hospitais do Governo do Estado do Ceará",
+    "authors": [
+        {
+            "name": "Pedro Lucas Morais Costa", 
+            "email": "pedro@plcosta.com",
+            "homepage": "http://plcosta.com"
+        }
+    ],
+    "resolutions": [
+        {
+            "width": 800,
+            "height": 600
+        },
+        {
+            "width": 1024,
+            "height": 768
+        },
+        {
+            "width": 1440,
+            "height": 900
+        },
+        {
+            "width": 1920,
+            "height": 1080
+        }
+    ],
+    "events": {
+        "onload": "DataHora.load"
+    }
+
+}
