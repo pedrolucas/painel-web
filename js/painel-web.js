@@ -14,11 +14,11 @@ SGA.PainelWeb = {
     init: function() {
         SGA.PainelWeb.Config.load();
         SGA.PainelWeb.started = (SGA.PainelWeb.unidade > 0 && SGA.PainelWeb.servicos.length > 0);
-        
         $.painel({
             url: SGA.PainelWeb.url,
             unidade: SGA.PainelWeb.unidade,
             servicos: SGA.PainelWeb.servicos,
+            nomeEmpresa: SGA.PainelWeb.nomeEmpresa,
             onunidades: function(unidades) {
                 var list = $('#unidades');
                 list.html('<option value="">Selecione</option>');
@@ -89,11 +89,15 @@ SGA.PainelWeb = {
                 $('.vocalizar').prop('disabled', !checked);
             }, 100);
         });
+        $('#nome-empresa').on('change', function() {
+            SGA.PainelWeb.nomeEmpresa = $(this).val();
+        });
         $('#config-save').on('click', function() {
             SGA.PainelWeb.Config.save();
             $.painel({
                 url: SGA.PainelWeb.url,
-                servicos: SGA.PainelWeb.servicos
+                servicos: SGA.PainelWeb.servicos,
+                nomeEmpresa: SGA.PainelWeb.nomeEmpresa
             });
             if (!SGA.PainelWeb.started) {
                 $.painel().start();
@@ -120,6 +124,8 @@ SGA.PainelWeb = {
         var painel = SGA.PainelWeb;
         if (painel.started && painel.senhas.length > 0) {
             var senha = painel.senhas.shift();
+            console.log(senha);
+            console.log('Empresa: '+SGA.PainelWeb.nomeEmpresa);
             // atualizando a senha atual
             if (senha.peso > 0) {
                 $('#layout').addClass('prioridade');
@@ -309,7 +315,7 @@ SGA.PainelWeb = {
     Config: {
 
         load: function() {
-            SGA.PainelWeb.url = SGA.PainelWeb.Storage.get('url');
+            SGA.PainelWeb.url = SGA.PainelWeb.Storage.get('url');            
             SGA.PainelWeb.unidade = SGA.PainelWeb.Storage.get('unidade') || 0;
             var servicos = $.trim(SGA.PainelWeb.Storage.get('servicos'));
             SGA.PainelWeb.servicos = (servicos.length > 0) ? servicos.split(',') : [];
@@ -318,8 +324,10 @@ SGA.PainelWeb = {
             SGA.PainelWeb.vocalizarZero = SGA.PainelWeb.Storage.get('vocalizarZero') === '1';
             SGA.PainelWeb.vocalizarLocal = SGA.PainelWeb.Storage.get('vocalizarLocal') === '1';
             SGA.PainelWeb.lang = SGA.PainelWeb.Storage.get('lang') || 'pt';
+            SGA.PainelWeb.nomeEmpresa = SGA.PainelWeb.Storage.get('nome-empresa');
             // atualizando interface
             $('#url').val(SGA.PainelWeb.url);
+            
             $('#unidades').val(SGA.PainelWeb.unidade);
             $('#servicos input').each(function(i, e) {
                 var value = $(e).val();
@@ -331,6 +339,7 @@ SGA.PainelWeb = {
             $('#vocalizar-zero').prop('checked', SGA.PainelWeb.vocalizarZero);
             $('#vocalizar-local').prop('checked', SGA.PainelWeb.vocalizarLocal);
             $('#idioma').val(SGA.PainelWeb.lang);
+            $('#nome-empresa').val(SGA.PainelWeb.nomeEmpresa);
         },
                 
         save: function() {
@@ -354,6 +363,7 @@ SGA.PainelWeb = {
             SGA.PainelWeb.Storage.set('vocalizarZero', SGA.PainelWeb.vocalizarZero ? '1' : '0');
             SGA.PainelWeb.Storage.set('vocalizarLocal', SGA.PainelWeb.vocalizarLocal ? '1' : '0');
             SGA.PainelWeb.Storage.set('lang', SGA.PainelWeb.lang);
+            SGA.PainelWeb.Storage.set('nome-empresa', SGA.PainelWeb.nomeEmpresa);
         }
     },
     

@@ -24,9 +24,11 @@
     margin-top: 0;
     color: #72ad8c;
 }
-#layout .header h1 span {
+#layout .header h2 {
     color: #8fac9c;
     font-weight: normal;
+    font-size: 2em;
+    margin-top: 0;
 }
 .center {
     width: 1000px;
@@ -91,6 +93,7 @@
 #senha-container {
     width: 100%;
     display: block;
+    margin-left: 10px;
 }
 .box-senha {
     float: left;

@@ -9,7 +9,8 @@
         url: "",
         unidade: 0,
         servicos: [],
-        interval: 3
+        interval: 3,
+        nomeEmpresa: ""
     };
     $.painel = function(opts) {
         if (!setup) {
@@ -48,6 +49,8 @@
                         self.options.servicos, 
                         self.options.onsenhas
                     );
+                    // Adicionado Nome da Empresa no Painel
+                    $('#nome-empresa-painel').text(SGA.PainelWeb.nomeEmpresa);
                 }
             };
             
