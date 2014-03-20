@@ -70,6 +70,7 @@
     position: fixed;
     top: 0;
     right: 20px;
+    width: 20%;
 }
 .container-date #day { font-weight: bold; color: #8fac9c; text-transform: uppercase; font-size:2em; text-align:center; }
 .container-date #date { padding: 20px 0 0 5px; font-weight: bold; color: #8fac9c; text-transform: uppercase; font-size:2em; text-align:center; }
@@ -103,6 +104,12 @@
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
 }
+.box-senha p {
+    text-align: center;
+    padding: 5px;
+    font-size: 3em;
+    color: #fff;
+}
 #layout.normal .box-senha {
     border: 5px solid #b9d8c1;
     background: #59b282; /* Old browsers */
@@ -128,10 +135,11 @@
 
 #senha-container #senha span {
     text-align: center;
-    font-size: 16em;
+    font-size: 15em;
     color: #fff;
     font-weight: bold;
     display: block;
+    line-height: 0.6;
 }
 .container-servico {
     float: left;
@@ -139,10 +147,10 @@
     max-height: 200px;
     margin: 0 0 0 30px;
 }
-.container-servico #mensagem {
+.container-servico #nome-servico {
     text-align: center;
 }
-.container-servico #mensagem span {
+.container-servico #nome-servico span {
     text-align: center;
     color: #69a583;
     font-size: 4.5em;
