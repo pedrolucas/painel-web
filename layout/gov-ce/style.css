@@ -92,14 +92,17 @@
 
 /* SENHA */
 #senha-container {
+    clear: both;
+    float: left;
     width: 100%;
     display: block;
     margin-left: 10px;
+    margin-top: 50px;
 }
 .box-senha {
     float: left;
     width: 560px;
-    height: 230px;
+    height: 280px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -139,7 +142,6 @@
     color: #fff;
     font-weight: bold;
     display: block;
-    line-height: 0.6;
 }
 .container-servico {
     float: left;
@@ -187,6 +189,7 @@
     width: 100%;
     bottom: 0;
     border-top: 5px solid #d6e5d6;
+    height: 250px;
 }
 #historico h2 {
     color: #8fac9c;

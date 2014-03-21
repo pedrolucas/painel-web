@@ -139,7 +139,7 @@ SGA.PainelWeb = {
             var atual = container.find('#senha span').text();
             var s = $.painel().format(senha);
             container.find('#mensagem').text(senha.mensagem);
-            container.find('#nome-servico span').text(senha.nome);
+            container.find('#nome-servico span').text(senha.nomeServico);
             container.find('#senha span').text(s);
             container.find('#local span').text(senha.local);
             container.find('#local-numero span').text(senha.numeroLocal);
