@@ -1,15 +1,11 @@
-
-<!-- Layout GOV-CE 
-Desenvolvido pela Tecnologia da Informação do Hospital Infantil Albert Sabin
-Contato: pedro@plcosta.com
--->
+        
 <div id="layout-content">
 
     <!-- Titulo do Painel - Informacoes gerais -->
-    <div class="header center">
+    <div class="topo">
         <h2>Bem-vindo ao</h2>
         <h1 id="nome-empresa-painel">Hospital Infantil Albert Sabin</h1>
-        <div class="container-clock">
+        <div class="container-datahora">
             <div class="clock">
               <ul class="time">
                   <li id="hours"></li>
@@ -24,33 +20,37 @@ Contato: pedro@plcosta.com
         </div>
     </div>
 
-    <!-- Exibicao da ultima senha chamada -->
-    <div id="senha-container" class="center">
-        <div class="box-senha box-normal">
-            <p id="mensagem"></p>
-            <div id="senha">
-                <span>A000</span>
+    <div id="senha-container">
+        <div id="mensagem">
+            <span>Prioridade: {{ ultima.servico }}</span>
+        </div>
+        <div class="middle">
+            <div class="left">
+                <div id="senha" class="blink">
+                    <span>{{ ultima.texto }}</span>
+                </div>
+            </div>
+            <div class="right">
+                <div id="local" class="local">
+                    <span>{{ ultima.local }}</span>
+                </div>
+                <div id="local-numero" class="numero-local">
+                    <span>{{ ultima.numeroLocal }}</span>
+                </div>
             </div>
         </div>
-        <div class="container-servico">
-            <div id="nome-servico">
-                <span>Nome do Servico</span>
-            </div>           
-        </div>
-        <div class="container-local">
-            <div id="local">
-                <span>Consultório</span>
-            </div>
-            <div id="local-numero">
-                <span>99</span>
-            </div>
-        </div>
-    </div> <!-- /senha-container -->
-
-    <!-- Historico de senhas chamadas -->
+    </div>
     <div id="historico">
-        <h2>Senhas Anteriores</h2>
         <div class="senhas">
+            <div class="senha-chamada {{ senha.styleClass }}" ng-repeat="senha in anteriores | limitTo: 5">
+                <div class="senha">
+                    <span>{{ senha.texto }}</span>
+                </div>
+                <div class="local">
+                    <span>{{ senha.local }}: {{ senha.numeroLocal }}</span>
+                </div>
+            </div>
         </div>
-    </div><!-- /historico -->
-</div> <!-- /layout-content -->
+    </div>
+</div>
+<div id="error">Resolução não suportada</div>

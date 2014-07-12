@@ -1,43 +1,67 @@
-/* 
- * Gov-CE layout - Painel Web Novo SGA
+/** 
+ * GOV-CE layout - Painel Web
  * @author Pedro Costa <pedro@plcosta.com>
  */
+#layout {
+    background: #c5d4cf url("images/bg.jpg") top center repeat;
+}
 
-#layout * {
+#layout, #layout * { 
+    padding: 0;
+    margin: 0;
     line-height: 1;
 }
-#layout {
-    background: #c5d4cf url('images/bg.jpg') top center repeat;
-    font-family: 'Ubuntu';
-    overflow-x: hidden;
-    overflow-y: hidden;
+
+#error {
+    color: #ccc;
+    display: none;
 }
-#layout .header {
+
+#layout .top {
+    height: 15%;
+}
+
+#layout .middle { width: 100%; height: 60%; }
+
+#layout .middle .left {
+    width: 65%;
+    height: 100%; 
     float: left;
+    margin-left: 20px;
+}
+
+#layout .middle .right { 
+    width: 32%; 
+    float: right;
+}
+
+#layout .middle .right .local { line-height: 1; }
+#layout .middle .right .numero-local { line-height: 1; }
+
+/*
+* Topo
+*/
+#layout .topo {    
     height: 135px;
-    margin-left: 10px;
-    margin-top: 10px;
 }
-#layout .header h1 {
-    float: left;
+
+#layout .topo h1 {
     font-size: 3em;
     margin-top: 0;
     color: #72ad8c;
+    padding: 10px;
 }
-#layout .header h2 {
+
+#layout .topo h2 {
     color: #8fac9c;
     font-weight: normal;
     font-size: 2em;
-    margin-top: 0;
-}
-.center {
-    width: 1000px;
-    margin: 0 auto;
+    padding: 10px;
 }
 
 /* DATA E HORA */
-.container-clock {
-    position: fixed;
+#layout .container-datahora {
+    position: absolute;
     right: 0;
     top: 0;
     padding: 10px;
@@ -50,7 +74,7 @@
 
 .clock {
     position: fixed;
-    top: 0;
+    top: 10px;
 }
 .clock ul.time {
     float: left;
@@ -88,128 +112,55 @@
     50% {opacity:0; text-shadow:none; }
     100% {opacity:1.0; text-shadow:0 0 20px #00c6ff; }  
 }
-/* // FIM DATA E HORA */
 
-/* SENHA */
-#senha-container {
-    clear: both;
-    float: left;
-    width: 100%;
-    display: block;
-    margin-left: 10px;
-    margin-top: 50px;
+/* 
+ * Senha Atual - Ultima senha chamada
+ */
+#mensagem span {
+    padding: 10px 29px;
+    display: inline-block;
 }
-.box-senha {
-    float: left;
-    width: 560px;
-    height: 280px;
+
+#senha {
+    font-weight: bold;
+    text-align: center;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
 }
-.box-senha p {
+
+/* local */
+
+#local {
     text-align: center;
-    padding: 5px;
-    font-size: 3em;
-    color: #fff;
-}
-#layout.normal .box-senha {
-    border: 5px solid #b9d8c1;
-    background: #59b282; /* Old browsers */
-    background: -moz-linear-gradient(top,  #59b282 0%, #488c65 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#59b282), color-stop(100%,#488c65)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #59b282 0%,#488c65 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #59b282 0%,#488c65 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #59b282 0%,#488c65 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #59b282 0%,#488c65 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59b282', endColorstr='#488c65',GradientType=0 ); /* IE6-9 */    
-}
-#layout.prioridade .box-senha {
-    border: 5px solid #EF906E;
-    background: #a90329; /* Old browsers */
-    background: -moz-linear-gradient(top, #a90329 0%, #682533 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(100%,#682533)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #a90329 0%,#682533 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #a90329 0%,#682533 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #a90329 0%,#682533 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #a90329 0%,#682533 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#682533',GradientType=0 ); /* IE6-9 */
+    margin: 0 auto;
 }
 
-#senha-container #senha span {
-    text-align: center;
-    font-size: 15em;
-    color: #fff;
+#local-numero {    
     font-weight: bold;
-    display: block;
-}
-.container-servico {
-    float: left;
-    width: 40%;
-    max-height: 200px;
-    margin: 0 0 0 30px;
-}
-.container-servico #nome-servico {
     text-align: center;
-}
-.container-servico #nome-servico span {
-    text-align: center;
-    color: #69a583;
-    font-size: 4.5em;
-    overflow: hidden;
-}
-.container-local {
-    float: left;
-    width: 40%;
-    margin: 20px 0 0 30px;
-    text-align: center;
-}
-.container-local #local, .container-local #local-numero {
-    display: inline;
-}
-.container-local #local {
-    margin-top: 20px;
-}
-.container-local #local span {
-    color: #91a99b;
-    font-size: 4em;
-    text-align: center;
-}
-.container-local #local-numero span {
-    color: #69a583;
-    font-size: 6em;
-    text-align: center;
-    font-weight: bold;
-    margin-left: 10px;
+    margin: 0 auto;
 }
 
-/* Historico de Senhas */
+/*
+ * Ultimas senhas chamadas
+ */
 #historico {
-    position: fixed;
     width: 100%;
+    position: fixed;
     bottom: 0;
     border-top: 5px solid #d6e5d6;
-    height: 250px;
-}
-#historico h2 {
-    color: #8fac9c;
-    font-weight: normal;
-    font-size: 4em;
-    margin-top: 20px;
-    margin-left: 20px;
 }
 
 #historico .senhas {
     height: 100%;
     overflow: hidden;
-    margin-top: 20px;
 }
 
 #historico .senhas div.senha-chamada {
     width: 33%;
     height: 100%;
     display: inline-block;
-    margin-bottom: 10px;
 }
 
 #historico .senhas div.senha-chamada div.senha { 
@@ -217,25 +168,168 @@
     text-align: center; 
 }
 
+#historico .senhas * { color: #69a583 !important; }
+
 #historico .senhas div.senha-chamada div.local {
     text-align: center;
 }
 
-.senha-chamada .senha span {
-    font-size: 6em;
+/* cores - atendimento normal */
+#layout.normal { background-color: #0055a3; }
+#layout.normal #mensagem span { color: #fff; }
+#layout.normal #senha span { color: #eeff00; }
+#layout.normal #local span { color: #fff; }
+#layout.normal #local-numero span { color: #fff; }
+#layout.normal #historico .senhas { background: rgba(0, 0, 0, .4); }
+#layout.normal #historico .senhas * { color: #fff; }
+
+#senha-container span { color:#69a583; }
+
+/* cores - protocolo manchester */
+#layout.prioridade #senha-container #mensagem span { color: #d2322d; }
+#layout.prioridade #senha { background-color: #d2322d; }
+#layout.prioridade #senha span { color: #fff; }
+
+#layout.vermelho #senha-container #mensagem span { color: #d2322d; }
+#layout.vermelho #senha { background-color: #d2322d; }
+#layout.vermelho #senha span { color: #fff; }
+
+#layout.laranja #senha-container #mensagem span { color: #f7941d; }
+#layout.laranja #senha { background-color: #f7941d; }
+#layout.laranja #senha span { color: #fff; }
+
+#layout.urgente #senha-container #mensagem span { color: #C7BE21; }
+#layout.urgente #senha { background-color: #fff200; }
+#layout.urgente #senha span { color: #353131; }
+
+#layout.verde #senha-container #mensagem span { color: #00a651; }
+#layout.verde #senha { background-color: #00a651; }
+#layout.verde #senha span { color: #fff; }
+
+#layout.azul #senha-container #mensagem span { color: #0000ff; }
+#layout.azul #senha { background-color: #0000ff; }
+#layout.azul #senha span { color: #fff; }
+
+/* not supported resolution */
+@media only screen and (max-width: 790px) {
+    #layout-content { display: none; }
+    #error { display: block; }
+}
+@media only screen and (min-width: 1441px) {
+    #layout-content { display: none; }
+    #error { display: block; }
 }
 
-.senha-chamada .local span {
-    font-size: 3em;
-}  
 
-#historico .normal * { color: #69a583; }
-#historico .prioridade * { color: #a90329; }
+/* 1440x900 */
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+    
+    #mensagem {
+        height: auto;
+    }
+    
+    #mensagem span {
+        font-size: 5em;
+    }
+    
+    #senha span {
+        font-size: 24em;
+    }
+    
+    #historico {
+        height: 200px; 
+    }
+    
+    #local span {
+        font-size: 6em;
+    }
+    
+    #local-numero span {
+        font-size: 14em;
+    }
+    
+    .senha-chamada .senha span {
+        font-size: 8em;
+    }
+    
+    .senha-chamada .local span {
+        font-size: 4em;
+    }
+    
+}
 
+/* 1024x768 */
+@media only screen and (max-width: 1024px) and (min-width: 801px) {
+    
+    #mensagem {
+        height: auto;
+    }
+    
+    #mensagem span {
+        font-size: 5em;
+    }
+    
+    #senha span {
+        font-size: 18em;
+    }
+    
+    #historico {
+        height: 200px; 
+    }
+    
+    #historico .senhas {
+        padding-top: 30px;
+    }
+    
+    #local span {
+        font-size: 4em;
+    }
+    
+    #local-numero span {
+        font-size: 12em;
+    }
+    
+    .senha-chamada .senha span {
+        font-size: 6em;
+    }
+    
+    .senha-chamada .local span {
+        font-size: 3em;
+    }
+}
 
-
-
-
-
-
-
+/* 800x600 */
+@media only screen and (max-width: 800px) {
+    
+    #mensagem {
+        height: auto;
+    }
+    
+    #mensagem span {
+        font-size: 4em;
+    }
+    
+    #historico {
+        display: none;
+    }
+    
+    #senha span {
+        font-size: 14em;
+    }
+    
+    #local span {
+        font-size: 3em;
+    }
+    
+    #local-numero span {
+        font-size: 10em;
+    }
+    
+    .senha-chamada .senha span {
+        font-size: 4em;
+    }
+    
+    .senha-chamada .local span {
+        font-size: 2em;
+    }
+}

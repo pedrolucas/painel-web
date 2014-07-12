@@ -1,5 +1,4 @@
-var DataHora = {
-  load: function(){   
+var DataHora = function(){  
     var monthNames = [ "<span>de</span> Janeiro", "<span>de</span> Fevereiro", "<span>de</span> Março", "<span>de</span> Abril", "<span>de</span> Maio", "<span>de</span> Junho", "<span>de</span> Julho", "<span>de</span> Agosto", "<span>de</span> Setembro", "<span>de</span> Outubro", "<span>de</span> Novembro", "<span>de</span> Dezembro" ]; 
     var dayNames= ["Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado"];
 
@@ -22,5 +21,5 @@ var DataHora = {
       var hours = new Date().getHours();
       $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
         }, 1000); 
-    }
-};
+    };
+// };
