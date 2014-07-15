@@ -198,9 +198,9 @@
 #layout.laranja #senha { background-color: #f7941d; }
 #layout.laranja #senha span { color: #fff; }
 
-#layout.urgente #senha-container #mensagem span { color: #C7BE21; }
-#layout.urgente #senha { background-color: #fff200; }
-#layout.urgente #senha span { color: #353131; }
+#layout.amarelo #senha-container #mensagem span { color: #C7BE21; }
+#layout.amarelo #senha { background-color: #fff200; }
+#layout.amarelo #senha span { color: #353131; }
 
 #layout.verde #senha-container #mensagem span { color: #00a651; }
 #layout.verde #senha { background-color: #00a651; }
